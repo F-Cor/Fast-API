@@ -1,20 +1,18 @@
 from fastapi import Request, status, BackgroundTasks
 from fastapi.responses import JSONResponse
 from SpellingBee import app, templates
-import time
-from datetime import datetime
 
-def _run_task(name: str, id=None):
-    time.sleep(3)
-    with open("tasks_out.txt", mode='a') as file:
-        now = datetime.now()
-        content = f'{name} [{id}]: {now}\n'
-        file.write(content)
 
-@app.post('/task/run/{name}/{id}')
-async def task_run(name: str, id: int, background_tasks: BackgroundTasks):
+def _update_db(word_list: list, letters: list, must_use: str):
     '''
-    Takes in a task and writes it into a file
+    Function to create new word list for the day and post to db
     '''
-    background_tasks.add_task(_run_task, name, id)
-    return {'message': f"Task {name} ID {id} is being run...\n"}
+    return None
+
+# @app.post('task/db_update/{word_list}/{letters}/{must_use}')
+# async def db_update(word_list: list, letters: list, must_use: str, background_tasks: BackgroundTasks):
+#     '''
+#     Uses _update_db to create new word_list, letters, and must_use in DB
+#     '''
+#     background_tasks.add_task(_update_db, word_list, letters, must_use)
+#     return {'message': f""}
