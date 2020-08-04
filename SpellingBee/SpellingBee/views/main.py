@@ -1,5 +1,5 @@
 from SpellingBee import app, templates
-from SpellingBee.methods.DB_build_helper import Word_Items
+from SpellingBee.methods.DB_build_helper import *
 from fastapi import Request
 
 
@@ -19,15 +19,7 @@ async def input(user: str, word: str):
     # Check that all letters are in "letters" list
     # Update database with new info
     # Return all info to front end
-    
-    valid_word = True
-    found_words: list = []
-    if valid_word:
-        found_words.append(word)
-    return {'user': user,
-            'valid_word': valid_word,
-            'found_words': found_words,
-            'word': word}
+
 
 @app.get('/db_update')
 async def db_update():
