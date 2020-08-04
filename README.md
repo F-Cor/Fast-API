@@ -12,9 +12,6 @@
 - [ ] Migrate from local -> Heroku
 - [ ] Look into 12hour timer for reset 
     - background tasks?
-- [ ] Look into Psycopg2
-    - Update database every x hours
-    - Update user info when they submit
 
 Maybe we only use this to update the DB, then all other interactions are handled between
 front end and DB?

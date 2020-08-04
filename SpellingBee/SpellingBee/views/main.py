@@ -12,8 +12,7 @@ async def root(request: Request):
 async def get_new_pass(password: str):
     global PASSWORD 
     PASSWORD = password
-    return {'message': "Password updated",
-            'new_pass': {PASSWORD}}
+    return f'Password updated'
 
 @app.get('/db_update/{password}')
 async def db_update(password: str):
