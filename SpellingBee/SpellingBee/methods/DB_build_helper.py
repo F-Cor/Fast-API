@@ -1,7 +1,7 @@
 import itertools
 import random
 
-class word_items:
+class Word_Items:
     '''
     Class for all the word related items in the game
     '''
@@ -15,7 +15,7 @@ class word_items:
         '''
         Function to create a list from our word bank
         '''
-        with open('SpellingBee\data\word_list.txt', 'r') as f:
+        with open('../SpellingBee/data/word_list.txt', 'r') as f:
             for line in f:
                 if len(line) > 3:
                     self.all_words.append(line.replace('\n', ''))
@@ -46,6 +46,7 @@ class word_items:
         '''
         Function to create word_list based on letter_list and must_use
         '''
+        self.word_list = []
         def _possible_words(character):
             x = {}
             for n in character:
@@ -62,12 +63,4 @@ class word_items:
                     value = 0
             if (value == 1) and (self.must_use in i) and (len(i) > 3):
                 self.word_list.append(i)
-                
-
-c = word_items()
-
-c.get_all_words()
-c.get_letters()
-c.get_word_list()
-print(c.letter_list, c.must_use, c.word_list)
 

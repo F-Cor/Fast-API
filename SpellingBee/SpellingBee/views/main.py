@@ -1,5 +1,7 @@
 from SpellingBee import app, templates
+from SpellingBee.methods.DB_build_helper import Word_Items
 from fastapi import Request
+
 
 @app.get('/')
 async def root(request: Request):
@@ -27,10 +29,12 @@ async def input(user: str, word: str):
             'found_words': found_words,
             'word': word}
 
-# @app.post('/database_24h')
-# async def database_output(word_list: list, letters: list, must_use: str):
-#     '''
-#     Dummy route to be used for posting to SQL db
-#     '''
-#     return {'word_list': word_list, 'letters': letters, 'must_use': must_use} 
-
+@app.get('/db_update')
+async def db_update():
+    c = Word_Items()
+    c.get_all_words()
+    c.get_letters()
+    c.get_word_list()
+    return({"letter_list": c.letter_list,
+            "must_use": c.must_use,
+            "word_list": c.word_list})
