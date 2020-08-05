@@ -19,6 +19,7 @@ async def get_new_pass(password: str):
 
 @app.get('/db_update/{password}')
 async def db_update(password: str):
+    global PASSWORD
     if password == PASSWORD:    
         c = Word_Items()
         return(c.update_db())

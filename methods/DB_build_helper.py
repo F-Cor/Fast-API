@@ -1,5 +1,9 @@
 import itertools
+import os
 import random
+
+path = os.path.join(os.getcwd(), 'methods', 'word_list.txt')
+print(path)
 
 class Word_Items:
     '''
@@ -38,7 +42,7 @@ class Word_Items:
         '''
         Function to create a list from our word bank
         '''
-        with open('../FAST-API/data/word_list.txt', 'r') as f:
+        with open(path, 'r') as f:
             for line in f:
                 if len(line) > 3:
                     self.all_words.append(line.replace('\n', ''))
@@ -92,3 +96,6 @@ class Word_Items:
                     "must_use": self.must_use,
                     "word_list": self.word_list,
                     "word_list_len": len_words}
+
+c = Word_Items()
+print(c.update_db())
