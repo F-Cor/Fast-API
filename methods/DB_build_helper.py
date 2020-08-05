@@ -38,7 +38,7 @@ class Word_Items:
         '''
         Function to create a list from our word bank
         '''
-        with open('../FAST-API/src/data/word_list.txt', 'r') as f:
+        with open('methods\word_list.txt', 'r') as f:
             for line in f:
                 if len(line) > 3:
                     self.all_words.append(line.replace('\n', ''))
