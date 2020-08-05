@@ -6,13 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-fastapi = "*"
-jinja2 = "*"
-aiofiles = "*"
 uvicorn = "*"
+fastapi = "*"
+aiofiles = "*"
 
 [requires]
 python_version = "3.7"
-
-[scripts]
-SB = 'python run.py'
