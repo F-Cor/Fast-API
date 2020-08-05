@@ -3,7 +3,6 @@ import os
 import random
 
 path = os.path.join(os.getcwd(), 'methods', 'word_list.txt')
-print(path)
 
 class Word_Items:
     '''
@@ -96,6 +95,3 @@ class Word_Items:
                     "must_use": self.must_use,
                     "word_list": self.word_list,
                     "word_list_len": len_words}
-
-c = Word_Items()
-print(c.update_db())
