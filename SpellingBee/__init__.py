@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory='./SpellingBee/static'), name='static')
-templates = Jinja2Templates(directory='./SpellingBee/templates/')
 
-from SpellingBee.views import main, tasks
+
+from SpellingBee.views import main
