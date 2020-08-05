@@ -17,7 +17,7 @@ async def root(request: Request):
 #     PASSWORD = password
 #     return f'Password updated'
 
-@app.post('/db_update')#/{password}')
+@app.get('/db_update')#/{password}')
 async def db_update():#password: str):
     # global PASSWORD
     # if password == PASSWORD:    
