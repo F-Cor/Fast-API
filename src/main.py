@@ -1,6 +1,9 @@
-from SpellingBee import app
-from SpellingBee.methods.DB_build_helper import *
+from fastapi import FastAPI
+from methods.DB_build_helper import *
 from fastapi import Request
+
+
+app = FastAPI()
 
 PASSWORD = ''
 
