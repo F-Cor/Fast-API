@@ -21,15 +21,7 @@ app.add_middleware(
 async def root(request: Request):
     return {'message': "Welcome to the Spelling Bee FastAPI"}
 
-# @app.post('/password')
-# async def get_new_pass(password: str):
-#     global PASSWORD 
-#     PASSWORD = password
-#     return f'Password updated to {password}'
-
 @app.get('/db_update')
-async def db_update():#password: str):
-    # global PASSWORD
-    # if password == PASSWORD:    
-        c = Word_Items()
-        return(c.update_db())
+async def db_update():
+    c = Word_Items()
+    return(c.update_db())
