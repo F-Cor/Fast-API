@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from methods.DB_build_helper import *
 
 app = FastAPI()
-# PASSWORD = ''
 
 origins = [
     'http://localhost:3000'
