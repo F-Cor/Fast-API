@@ -1,12 +1,11 @@
-from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from methods.DB_build_helper import *
 import os
 
 app = FastAPI()
-load_dotenv()
-origin = os.getenv("ORIGINS")
+
+origin = os.getenv("LOCAL_ORIGIN")
 
 origins = [
     origin
