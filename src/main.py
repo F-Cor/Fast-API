@@ -6,9 +6,10 @@ import os
 
 app = FastAPI()
 load_dotenv()
+origin = os.getenv("ORIGINS")
 
 origins = [
-    os.getenv("ORIGINS")
+    origin
 ]
 
 app.add_middleware(
