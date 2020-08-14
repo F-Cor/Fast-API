@@ -1,11 +1,14 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from methods.DB_build_helper import *
+import os
 
 app = FastAPI()
+load_dotenv()
 
 origins = [
-    'http://localhost:3000'
+    os.getenv("ORIGINS")
 ]
 
 app.add_middleware(

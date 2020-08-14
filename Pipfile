@@ -9,6 +9,7 @@ verify_ssl = true
 uvicorn = "*"
 fastapi = "*"
 aiofiles = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
