@@ -37,7 +37,7 @@ class Word_Items:
         self.letter_list = []
         self.must_use = ''
 
-    def get_all_words(self):
+    def _get_all_words(self):
         '''
         Function to create a list from our word bank
         '''
@@ -46,7 +46,7 @@ class Word_Items:
                 if len(line) > 3:
                     self.all_words.append(line.replace('\n', ''))
 
-    def get_letters(self):
+    def _get_letters(self):
         '''
         Function to set our list of possible letters
         and our must use letter
@@ -55,7 +55,7 @@ class Word_Items:
         self.letter_list = list(set(new_word))
         self.must_use = random.choice(self.letter_list)
 
-    def get_word_list(self):
+    def _get_word_list(self):
         '''
         Function to create word_list based on letter_list and must_use
         '''
@@ -82,13 +82,11 @@ class Word_Items:
         Function to update the DB
         '''
         self._reset_class()
-        self.get_all_words()
-        self.get_letters()
-        self.get_word_list()
+        self._get_all_words()
+        self._get_letters()
+        self._get_word_list()
         len_words = len(self.word_list)
         if len_words < 15 or len_words > 30:
-            # print(self.word_list, len_words)
-            # print('recursing')
             return self.update_db()
         else:
             return {"letter_list": self.letter_list,
