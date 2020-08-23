@@ -1,8 +1,8 @@
-# Spelling Bee Fast-API
+# Word Bank Fast-API
 
 ## Usage (Production)
 
-The app refreshes the Spelling-Bee database, updating the possible words list, and letters to use for the time period
+The app refreshes the Word Bank database updating the possible words list and letters to use for the time period
 
 ## Usage (development)
 
