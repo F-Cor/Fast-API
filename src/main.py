@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get('/')
 async def root(request: Request):
-    return {'message': "Welcome to the Spelling Bee FastAPI"}
+    return {'message': "Welcome to the Word Bank FastAPI"}
 
 @app.get('/db_update')
 async def db_update():
