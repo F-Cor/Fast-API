@@ -3,6 +3,7 @@
 ## Usage (Production)
 
 The app refreshes the Word Bank database updating the possible words list and letters to use for the time period
+Endpoint: `https://git.heroku.com/word-bank-db.git`
 
 ## Usage (development)
 
