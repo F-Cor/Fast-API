@@ -91,5 +91,4 @@ class Word_Items:
         else:
             return {"letter_list": self.letter_list,
                     "must_use": self.must_use,
-                    "word_list": self.word_list,
-                    "word_list_len": len_words}
+                    "word_list": self.word_list}

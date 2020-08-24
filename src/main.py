@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from methods.DB_build_helper import *
+from methods.db_utils import check_db
 import os
 
 app = FastAPI()
@@ -23,7 +23,6 @@ app.add_middleware(
 async def root(request: Request):
     return {'message': "Welcome to the Word Bank FastAPI"}
 
-@app.get('/db_update')
-async def db_update():
-    c = Word_Items()
-    return(c.update_db())
+@app.get('/db_pull')
+async def db_pull():
+    return check_db()

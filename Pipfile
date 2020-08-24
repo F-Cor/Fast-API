@@ -10,6 +10,10 @@ uvicorn = "*"
 fastapi = "*"
 aiofiles = "*"
 python-dotenv = "*"
+pandas = "*"
+sqlalchemy = "*"
+apscheduler = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
