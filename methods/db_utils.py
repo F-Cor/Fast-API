@@ -11,7 +11,10 @@ def db_updater():
     today = datetime.today().strftime('%b_%d_%y_%H').lower()
     c = Word_Items()
     c.update_db()
-    df = pd.DataFrame({'words': c.word_list, 'letters': c.letter_list + [None]*(len(c.word_list) - len(c.letter_list)), 'must_use': [c.must_use]*len(c.word_list), 'list_len': [len(c.word_list)]*len(c.word_list)})
+    df = pd.DataFrame({'words': c.word_list, 
+                       'letters': c.letter_list + [None]*(len(c.word_list) - len(c.letter_list)),
+                       'must_use': [c.must_use]*len(c.word_list),
+                       'list_len': [len(c.word_list)]*len(c.word_list)})
     df.to_sql(today, con=engine)
 
 def check_db():
