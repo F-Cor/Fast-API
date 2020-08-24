@@ -2,8 +2,8 @@
 
 ## Usage (Production)
 
-The app refreshes the Word Bank database updating the possible words list and letters to use for the time period
-Endpoint: `https://git.heroku.com/word-bank-db.git`
+Hit endpoint to get word list, letter list, must use letter, and word list length
+Endpoint: `https://git.heroku.com/word-bank-db.git/db_pull`
 
 ## Usage (development)
 
