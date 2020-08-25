@@ -22,7 +22,7 @@ def check_db():
     today = datetime.today().strftime('%b_%d_%y').lower()
 
     if 0 <= now < 12:
-        today += '_0'
+        today += '_00'
     else:
         today += '_12'
 
