@@ -28,7 +28,7 @@ def check_db():
 
     df = pd.read_sql_table(today, con=engine)
     word_list = df['words'].tolist()
-    letters = df['letters'][0:6].tolist()
+    letters = df['letters'][0:7].tolist()
     must_use = df['must_use'][0]
     list_len = len(word_list)
 
