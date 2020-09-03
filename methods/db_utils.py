@@ -48,5 +48,5 @@ def del_table():
     '''
     Deletes a table from 14 days ago (Only keep 2 weeks of tables in the DB)
     '''
-    table = (datetime.now() - timedelta(days = 14)).strftime('%b_%d_%y_%H').lower()
+    table = (datetime.today() - timedelta(days = 14)).strftime('%b_%d_%y_%H').lower()
     engine.execute(f'DROP TABLE IF EXISTS {table};')
