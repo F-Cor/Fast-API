@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from methods.word_list_gen import *
 from sqlalchemy import create_engine
 import os
@@ -8,6 +8,10 @@ DB_URL = os.environ['DATABASE_URL']
 engine = create_engine(DB_URL)
 
 def db_updater():
+    '''
+    Generates new words, letters, and must use words.
+    Creates new table in database and stores these items.
+    '''
     today = datetime.today().strftime('%b_%d_%y_%H').lower()
     c = Word_Items()
     c.update_db()
@@ -18,6 +22,9 @@ def db_updater():
     df.to_sql(today, con=engine)
 
 def check_db():
+    '''
+    Method to return data from the database
+    '''
     now = datetime.now().hour
     today = datetime.today().strftime('%b_%d_%y').lower()
 
@@ -36,3 +43,10 @@ def check_db():
             "letters": letters,
             "must_use": must_use,
             "list_len": list_len}
+
+def del_table():
+    '''
+    Deletes a table from 14 days ago (Only keep 2 weeks of tables in the DB)
+    '''
+    table = (datetime.now() - timedelta(days = 14)).strftime('%b_%d_%y_%H').lower()
+    engine.execute(f'DROP TABLE IF EXISTS {table};')
