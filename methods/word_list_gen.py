@@ -86,7 +86,7 @@ class Word_Items:
         self._get_letters()
         self._get_word_list()
         len_words = len(self.word_list)
-        if len_words < 15 or len_words > 30:
+        if len_words != 20:
             return self.update_db()
         else:
             return {"letter_list": self.letter_list,
