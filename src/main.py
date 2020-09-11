@@ -6,9 +6,11 @@ import os
 app = FastAPI()
 
 origin = os.getenv("LOCAL_ORIGIN")
+vercel = os.getenv("VERCEL")
 
 origins = [
-    origin
+    origin,
+    vercel
 ]
 
 app.add_middleware(
