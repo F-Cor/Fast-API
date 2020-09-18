@@ -2,7 +2,7 @@
 
 ## Usage (Production)
 
-Hit endpoint to get word list, letter list, must use letter, and word list length
+Hit endpoint to get word list, letter list, must use letter, and word list length  
 Endpoint: `https://git.heroku.com/word-bank-db.git/db_pull`
 
 ## Usage (development)
